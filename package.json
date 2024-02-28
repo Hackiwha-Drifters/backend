@@ -4,10 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
+    "start-server": "node app.js",
     "dev": "nodemon app.js",
-    "install": "npm install"
+    "install-server": "npm install"
   },
   "repository": {
     "type": "git",
