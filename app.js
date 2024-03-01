@@ -21,6 +21,10 @@ app.use("/users", userRouter);
 import appointementRouter from "./routes/appointment.routes.js";
 app.use("/appointements", appointementRouter);
 
+import chatBot from "./routes/chatBot.routes.js";
+app.use("/chatBot", chatBot);
+
+
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Marhaba on HealthBooth backend..." });
