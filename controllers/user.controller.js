@@ -13,6 +13,10 @@ export const signup = (req, res) => {
     password: bycrypt.hashSync(req.body.password, 8),
     Speciality: req.body.Speciality,
     PhoneNumber: req.body.PhoneNumber,
+    roles: req.body.roles,
+    subscriptionType: req.body.subscriptionType,
+    subscriptionStartDate: req.body.subscriptionStartDate,
+    subscriptionEndDate: req.body.subscriptionEndDate,
   });
 
   user
@@ -35,6 +39,10 @@ export const signup = (req, res) => {
             PhoneNumber: user.PhoneNumber,
             Speciality: user.Speciality,
             accessToken: token,
+            roles: user.roles,
+            subscriptionType: user.subscriptionType,
+            subscriptionStartDate: user.subscriptionStartDate,
+            subscriptionEndDate: user.subscriptionEndDate,
           });
         }
       );
@@ -82,6 +90,10 @@ export const signin = async (req, res) => {
           PhoneNumber: user.PhoneNumber,
           Speciality: user.Speciality,
           accessToken: token,
+          roles: user.roles,
+          subscriptionType: user.subscriptionType,
+          subscriptionStartDate: user.subscriptionStartDate,
+          subscriptionEndDate: user.subscriptionEndDate,
         });
       }
     );
@@ -104,6 +116,10 @@ export const getProfile = async (req, res) => {
       mail: user.mail,
       Speciality: user.Speciality,
       PhoneNumber: user.PhoneNumber,
+      roles: user.roles,
+      subscriptionType: user.subscriptionType,
+      subscriptionStartDate: user.subscriptionStartDate,
+      subscriptionEndDate: user.subscriptionEndDate,
     });
   } catch (err) {
     res.status(500).send({ message: err.message });
@@ -122,6 +138,10 @@ export const updateUser = async (req, res) => {
     user.mail = req.body.mail;
     user.Speciality = req.body.Speciality;
     user.PhoneNumber = req.body.PhoneNumber;
+    user.roles = req.body.roles;
+    user.subscriptionType = req.body.subscriptionType;
+    user.subscriptionStartDate = req.body.subscriptionStartDate;
+    user.subscriptionEndDate = req.body.subscriptionEndDate;
     await user.save();
     res.status(200).send({
       id: user._id,
@@ -129,6 +149,10 @@ export const updateUser = async (req, res) => {
       mail: user.mail,
       Speciality: user.Speciality,
       PhoneNumber: user.PhoneNumber,
+      roles: user.roles,
+      subscriptionType: user.subscriptionType,
+      subscriptionStartDate: user.subscriptionStartDate,
+      subscriptionEndDate: user.subscriptionEndDate,
     });
   } catch (err) {
     res.status(500).send({ message: err.message });

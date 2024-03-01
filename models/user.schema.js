@@ -59,6 +59,7 @@ const User = mongoose.model(
     },
     subscriptionEndDate: {
       type: Date,
+      default: Date.now + 30, // 30 days from now
     },
     // tempMeasures: {
     //   type: Array,
