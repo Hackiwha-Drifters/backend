@@ -15,7 +15,9 @@ const port = process.env.PORT || 5000; // set port number
 
 connectDb();
 
-app.use("/users", require("./routes/user.routes.js"));
+// app.use("/users", require("./routes/user.routes.js"));
+import userRouter from "./routes/user.routes.js";
+app.use("/users", userRouter);
 
 // simple route
 app.get("/", (req, res) => {

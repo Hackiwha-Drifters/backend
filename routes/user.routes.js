@@ -10,8 +10,8 @@ import {
   forgetPassword,
   resetPassword,
 } from "../controllers/forgetPassword.controller.js";
-import checkDuplicateUsernameOrEmail from "../middleware/verifyDuplicate.js";
-import verifyToken from "../middleware/authJwt.js";
+import checkDuplicateUsernameOrEmail from "../middlewares/verifyDuplicate.js";
+import verifyToken from "../middlewares/authJwt.js";
 
 const router = express.Router();
 
