@@ -1,4 +1,4 @@
-# Backend Project Name
+# Backend meDZone
 
 ## Description
 
@@ -9,8 +9,6 @@ This project serves as the backend for [brief description of your project]. It u
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
