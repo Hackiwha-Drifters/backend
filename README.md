@@ -2,7 +2,7 @@
 
 ## Description
 
-This project serves as the backend for [brief description of your project]. It utilizes Node.js, Express, MongoDB, and integrates the Chatbot functionality using the Gemini API to [mention what your backend does or its purpose].
+This project serves as the backend for [brief description of your project]. It utilizes Node.js, Express, MongoDB, and integrates the Chatbot functionality using the Gemini API to chat with the patint and propose solutions like visiting a specialite doctor.
 
 ## Table of Contents
 
