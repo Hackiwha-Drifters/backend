@@ -7,8 +7,8 @@ import corsOptions from "./config/corsOptions.js";
 dotenv.config();
 const app = express();
 
-// app.use(cors(corsOptions))
-app.use(cors());
+app.use(cors(corsOptions))
+// app.use(cors());
 app.use(express.json({ extended: false }));
 
 const port = process.env.PORT || 5000; // set port number

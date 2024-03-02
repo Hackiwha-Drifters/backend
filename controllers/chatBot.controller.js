@@ -3,6 +3,9 @@ import {
   HarmCategory,
   HarmBlockThreshold,
 } from "@google/generative-ai";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const MODEL_NAME = "gemini-pro";
 const API_KEY = process.env.API_KEY;
@@ -104,14 +107,15 @@ async function runChat(userInput) {
 
 const chatBot = async (req, res) => {
   try {
-    const userInput = req.body?.userInput;
-    console.log("incoming /chat req", userInput);
-    if (!userInput) {
-      return res.status(400).json({ error: "Invalid request body" });
+    const userInput = req.body.userInput;
+    console.log("incoming: ", userInput);
+    if (userInput === "") {
+      return res.status(200).json({ error: "empty message dalailo" });
     }
 
     const response = await runChat(userInput);
-    res.json({ response });
+    console.log("response: ", response);
+    res.status(200).json({ response });
   } catch (error) {
     console.error("Error in chat endpoint:", error);
     res.status(500).json({ error: "Internal Server Error" });

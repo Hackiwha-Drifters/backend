@@ -3,6 +3,6 @@ import chatBot from "../controllers/chatBot.controller.js";
 
 const router = express.Router();
 
-router.get("/", chatBot);
+router.post("/", chatBot);
 
 export default router;
